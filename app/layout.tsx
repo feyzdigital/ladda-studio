@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Syne, Inter } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const syne = Syne({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -18,17 +18,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ladda Studio | We Load Your Digital Potential",
+    default: "Ladda Studio | Your Hair, Your Signature",
     template: "%s | Ladda Studio",
   },
   description:
-    "Ladda Studio olarak dijital potansiyelinizi yüklüyoruz. Web tasarım, SEO, marka kimliği ve UI/UX çözümleriyle markanızı bir üst seviyeye taşıyoruz.",
+    "İstanbul'un en prestijli kuaför stüdyosu. Modern kesimler, kişiye özel renklendirme ve profesyonel saç bakımı. Randevu alın.",
   keywords: [
-    "web tasarım",
-    "SEO",
-    "dijital ajans",
-    "marka kimliği",
-    "UI/UX tasarım",
+    "kuaför",
+    "saç kesimi",
+    "balayage",
+    "keratin bakım",
+    "gelin başı",
+    "Nişantaşı kuaför",
     "Ladda Studio",
   ],
   authors: [{ name: "Ladda Studio" }],
@@ -49,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className="dark">
       <body
-        className={`${syne.variable} ${inter.variable} min-h-screen font-inter antialiased`}
+        className={`${playfair.variable} ${inter.variable} min-h-screen font-sans antialiased`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Loader2 } from "lucide-react";
-import { contactContent } from "@/lib/data";
+import { contactContent, services } from "@/lib/data";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -12,7 +12,9 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    phone: "",
+    service: "",
+    date: "",
     message: "",
   });
 
@@ -20,11 +22,10 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("loading");
 
-    // Simüle form gönderimi - gerçek projede API endpoint'e bağlanır
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setStatus("success");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", service: "", date: "", message: "" });
   };
 
   const handleChange = (
@@ -46,10 +47,7 @@ export default function ContactForm() {
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-zinc-300"
-          >
+          <label htmlFor="name" className="block text-sm font-medium text-silver">
             {contactContent.form.name}
           </label>
           <input
@@ -59,15 +57,12 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="Adınız Soyadınız"
           />
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-zinc-300"
-          >
+          <label htmlFor="email" className="block text-sm font-medium text-silver">
             {contactContent.form.email}
           </label>
           <input
@@ -77,41 +72,66 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="ornek@email.com"
           />
         </div>
       </div>
 
-      <div>
-        <label
-          htmlFor="subject"
-          className="block text-sm font-medium text-zinc-300"
-        >
-          {contactContent.form.subject}
-        </label>
-        <select
-          id="subject"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          required
-          className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-zinc-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-        >
-          <option value="">Konu seçin</option>
-          <option value="web-design">Web Tasarım</option>
-          <option value="seo">SEO & Pazarlama</option>
-          <option value="branding">Marka Kimliği</option>
-          <option value="ui-ux">UI/UX Tasarım</option>
-          <option value="other">Diğer</option>
-        </select>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-silver">
+            {contactContent.form.phone}
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            placeholder="+90 5XX XXX XX XX"
+          />
+        </div>
+        <div>
+          <label htmlFor="service" className="block text-sm font-medium text-silver">
+            {contactContent.form.service}
+          </label>
+          <select
+            id="service"
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            required
+            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          >
+            <option value="">Hizmet seçin</option>
+            {services.map((s) => (
+              <option key={s.slug} value={s.slug}>
+                {s.shortTitle}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-zinc-300"
-        >
+        <label htmlFor="date" className="block text-sm font-medium text-silver">
+          {contactContent.form.date}
+        </label>
+        <input
+          type="text"
+          id="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          placeholder="Örn: 15 Mart, öğleden sonra"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-silver">
           {contactContent.form.message}
         </label>
         <textarea
@@ -119,21 +139,20 @@ export default function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          required
-          rows={5}
-          className="mt-2 w-full resize-none rounded-lg border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-          placeholder="Projeniz hakkında bize bilgi verin..."
+          rows={4}
+          className="mt-2 w-full resize-none border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          placeholder="Özel istekleriniz veya notlarınız..."
         />
       </div>
 
       {status === "success" && (
-        <p className="rounded-lg bg-accent/10 p-4 text-sm text-accent">
+        <p className="border border-accent/30 bg-accent/10 p-4 text-sm text-accent">
           {contactContent.form.success}
         </p>
       )}
 
       {status === "error" && (
-        <p className="rounded-lg bg-red-500/10 p-4 text-sm text-red-400">
+        <p className="border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-400">
           {contactContent.form.error}
         </p>
       )}
@@ -141,7 +160,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-medium text-background transition-colors hover:bg-accent-muted disabled:opacity-50"
+        className="inline-flex items-center gap-2 border border-accent bg-accent px-6 py-3 font-medium text-background transition-colors hover:bg-accent-muted disabled:opacity-50"
       >
         {status === "loading" ? (
           <>

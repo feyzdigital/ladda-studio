@@ -9,16 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#050505",
-        surface: "#0a0a0a",
-        accent: "#CCFF00",
-        "accent-muted": "#a3cc00",
-        muted: "#737373",
+        background: "#0a0a0a",
+        surface: "#141414",
+        accent: "#D4AF37",
+        "accent-muted": "#b8962e",
+        muted: "#a3a3a3",
+        "silver": "#c0c0c0",
         border: "#262626",
       },
       fontFamily: {
-        syne: ["var(--font-syne)", "sans-serif"],
-        inter: ["var(--font-inter)", "sans-serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",

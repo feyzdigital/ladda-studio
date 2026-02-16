@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #050505;
-  --surface: #0a0a0a;
-  --accent: #CCFF00;
-  --accent-muted: #a3cc00;
-  --muted: #737373;
+  --background: #0a0a0a;
+  --surface: #141414;
+  --accent: #D4AF37;
+  --accent-muted: #b8962e;
+  --muted: #a3a3a3;
+  --silver: #c0c0c0;
   --border: #262626;
 }
 
@@ -27,30 +28,17 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-/* Kinetic scroll reveal - kelime kelime stagger */
-.word-reveal {
-  overflow: hidden;
+/* Elegant gold glow */
+.gold-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
-.word-reveal span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(100%);
-}
-
-/* Neon glow efekti */
-.neon-glow {
-  text-shadow: 0 0 10px rgba(204, 255, 0, 0.3),
-               0 0 20px rgba(204, 255, 0, 0.2),
-               0 0 40px rgba(204, 255, 0, 0.1);
-}
-
-/* Bento grid için özel stiller */
+/* Bento card hover */
 .bento-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bento-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -15px rgba(204, 255, 0, 0.1);
+  box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.15);
 }

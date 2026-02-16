@@ -1,17 +1,24 @@
 /**
- * Ladda Studio - Merkezi Veri Yapısı
- * Tüm site içerikleri, hizmetler ve projeler bu dosyada yönetilir.
+ * Ladda Studio - Lüks Kuaför & Güzellik Salonu
+ * Merkezi Veri Yapısı
  */
 
 export const siteConfig = {
   name: "Ladda Studio",
-  slogan: "We Load Your Digital Potential.",
-  tagline: "Dijital potansiyelinizi yüklüyoruz.",
+  slogan: "Your Hair, Your Signature.",
+  tagline: "The Art of Hair.",
   email: "info@ladda.studio",
-  address: "İstanbul, Türkiye",
+  phone: "+90 212 000 00 00",
+  address: "Nişantaşı, İstanbul",
+  instagram: "https://instagram.com/laddastudio",
+  hours: {
+    weekdays: "10:00 - 20:00",
+    saturday: "10:00 - 18:00",
+    sunday: "Kapalı",
+  },
 };
 
-// ============ HİZMETLER ============
+// ============ HİZMETLER (KUAFÖR) ============
 
 export interface Service {
   slug: string;
@@ -19,10 +26,9 @@ export interface Service {
   shortTitle: string;
   description: string;
   icon: string;
+  priceRange?: string;
   intro: string[];
-  process: { step: number; title: string; description: string }[];
-  technologies: { name: string; icon: string }[];
-  whyUs: string[];
+  details: string[];
   faqs: { question: string; answer: string }[];
   metaTitle: string;
   metaDescription: string;
@@ -30,463 +36,322 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    slug: "web-design",
-    title: "Profesyonel Web Tasarım & Yazılım Çözümleri",
-    shortTitle: "Web Tasarım",
-    description:
-      "Markanızı yansıtan, dönüşüm odaklı ve teknik açıdan kusursuz web siteleri.",
-    icon: "Globe",
+    slug: "cut-style",
+    shortTitle: "Cut & Style",
+    title: "Kesim & Şekillendirme",
+    description: "Modern kesimler, fön ve kişiye özel şekillendirme.",
+    icon: "Scissors",
+    priceRange: "₺800 - ₺2.500",
     intro: [
-      "Dijital dünyada varlığınız, web sitenizle başlar. Günümüzde kullanıcılar bir markayla ilk karşılaştıklarında web sitesini ziyaret ediyor; bu yüzden ilk izlenim her şeyi belirliyor. Eski, yavaş veya mobil uyumsuz bir site, potansiyel müşterilerinizi rakiplerinize yönlendirir.",
-      "Ladda Studio olarak, sadece güzel görünen değil; hızlı, güvenli ve arama motorlarında üst sıralarda yer alan web siteleri tasarlıyoruz. Her projemizde kullanıcı deneyimini (UX) ön planda tutarak, ziyaretçilerinizin hemen aradıklarını bulmasını ve harekete geçmesini sağlıyoruz.",
-      "React, Next.js ve modern web teknolojileriyle geliştirdiğimiz siteler, hem performans hem de SEO açısından rakiplerinizin bir adım önünde olmanızı sağlar. Kurumsal sitelerden e-ticaret platformlarına, landing page'lerden web uygulamalarına kadar geniş bir yelpazede hizmet sunuyoruz.",
+      "Saçınız sizin imzanızdır. Ladda Studio'da her kesim, yüz hatlarınıza ve yaşam tarzınıza özel tasarlanır. Klasik bob'tan katlı kesimlere, pixie'den uzun katlara kadar geniş bir yelpazede hizmet sunuyoruz.",
+      "Deneyimli stilistlerimiz, en son trendleri kişisel tarzınızla harmanlayarak size özel bir görünüm yaratır. Fön, düzleştirme ve şekillendirme dahil tüm işlemler premium ürünlerle gerçekleştirilir.",
     ],
-    process: [
-      {
-        step: 1,
-        title: "Keşif & Strateji",
-        description:
-          "İş hedeflerinizi, hedef kitlenizi ve rakiplerinizi analiz ediyoruz. Site haritası ve içerik stratejisi oluşturuyoruz.",
-      },
-      {
-        step: 2,
-        title: "Tasarım & Prototip",
-        description:
-          "UI/UX prensiplerine uygun wireframe ve yüksek çözünürlüklü tasarımlar hazırlıyoruz. Onayınızı alıyoruz.",
-      },
-      {
-        step: 3,
-        title: "Geliştirme & Test",
-        description:
-          "Responsive, erişilebilir ve SEO uyumlu kodlama yapıyoruz. Cross-browser testlerle kaliteyi garanti ediyoruz.",
-      },
-      {
-        step: 4,
-        title: "Yayın & Destek",
-        description:
-          "Siteyi canlıya alıyoruz. SSL, hosting ve bakım konularında sürekli destek sağlıyoruz.",
-      },
-    ],
-    technologies: [
-      { name: "Next.js", icon: "Zap" },
-      { name: "React", icon: "Atom" },
-      { name: "TypeScript", icon: "Code" },
-      { name: "Tailwind CSS", icon: "Palette" },
-      { name: "Node.js", icon: "Server" },
-    ],
-    whyUs: [
-      "Performans odaklı, Core Web Vitals standartlarına uygun geliştirme",
-      "Mobil-first yaklaşım ile tüm cihazlarda kusursuz görünüm",
-      "SEO-friendly yapı ile arama motorlarında üst sıralara çıkma potansiyeli",
-      "Güvenli ve ölçeklenebilir altyapı",
-      "Teslimattan sonra da teknik destek ve bakım hizmeti",
+    details: [
+      "Kadın Kesimi",
+      "Erkek Kesimi",
+      "Çocuk Kesimi",
+      "Fön & Blow Dry",
+      "Düzleştirme",
+      "Şekillendirme",
     ],
     faqs: [
       {
-        question: "Web sitesi projesi ne kadar sürede tamamlanır?",
+        question: "Randevu ne kadar süre önceden alınmalı?",
         answer:
-          "Proje kapsamına göre değişir. Basit kurumsal siteler 4-6 hafta, e-ticaret veya karmaşık web uygulamaları 8-16 hafta sürebilir. Keşif toplantısında net bir zaman çizelgesi sunuyoruz.",
+          "Özellikle hafta sonu ve özel günlerde yoğunluk yaşanabildiği için en az 2-3 gün önceden randevu almanızı öneririz.",
       },
       {
-        question: "Mevcut web sitemi yenileyebilir misiniz?",
+        question: "Kesim süresi ne kadardır?",
         answer:
-          "Evet. Mevcut içerikleri koruyarak tasarım ve teknik altyapıyı modernize edebiliriz. SEO değerinizi kaybetmeden geçiş yapıyoruz.",
+          "Kesim türüne göre 45 dakika ile 1,5 saat arasında değişir. Fön ve şekillendirme dahil toplam süre yaklaşık 1-2 saattir.",
       },
       {
-        question: "Hosting ve domain hizmeti de sunuyor musunuz?",
+        question: "Kendi ürünlerimi getirebilir miyim?",
         answer:
-          "Hosting ve domain yönetiminde size rehberlik ediyoruz. İsterseniz güvendiğimiz sağlayıcılarla entegre çalışıyoruz; isterseniz kendi sağlayıcınızı kullanabilirsiniz.",
+          "Salonumuzda profesyonel ürünler kullanıyoruz. Özel bir ürün kullanmak isterseniz, önceden bilgi verirseniz değerlendirebiliriz.",
       },
     ],
-    metaTitle: "Profesyonel Web Tasarım & Yazılım Çözümleri | Ladda Studio",
+    metaTitle: "Kesim & Şekillendirme | Ladda Studio",
     metaDescription:
-      "Next.js, React ve modern teknolojilerle kurumsal web siteleri, e-ticaret ve web uygulamaları. Hızlı, SEO uyumlu ve dönüşüm odaklı çözümler.",
+      "Modern kesimler, fön ve kişiye özel şekillendirme. İstanbul'un en prestijli kuaför salonunda saçınıza yeni bir imza atın.",
   },
   {
-    slug: "seo-marketing",
-    title: "SEO & Dijital Pazarlama Stratejileri",
-    shortTitle: "SEO & Pazarlama",
-    description:
-      "Organik trafik artışı ve marka görünürlüğü için veri odaklı SEO stratejileri.",
-    icon: "TrendingUp",
+    slug: "color-studio",
+    shortTitle: "Color Studio",
+    title: "Renklendirme Stüdyosu",
+    description: "Ombre, balayage, sombre ve dip boya ile saçınıza hayat verin.",
+    icon: "Palette",
+    priceRange: "₺1.500 - ₺5.000",
     intro: [
-      "Web siteniz hazır olsa bile, arama motorlarında görünmüyorsanız potansiyel müşterilerinize ulaşamazsınız. Google'da ilk sayfada yer alan siteler, tıklamaların %90'ından fazlasını alıyor. SEO (Arama Motoru Optimizasyonu), bu rekabette sizi öne çıkaran en güçlü araçtır.",
-      "Ladda Studio'da SEO'yu sadece anahtar kelime doldurma olarak görmüyoruz. Teknik SEO, içerik stratejisi, backlink yönetimi ve yerel SEO dahil bütüncül bir yaklaşım uyguluyoruz. Her strateji, rakip analizi ve veri temelli kararlarla şekilleniyor.",
-      "Dijital pazarlama kampanyalarınızı da yönetiyoruz: Google Ads, Meta reklamları, e-posta pazarlaması ve sosyal medya stratejileri. Organik ve ücretli kanalları entegre ederek, bütçenizi en verimli şekilde kullanmanızı sağlıyoruz.",
+      "Renk, kişiliğinizi yansıtan en güçlü ifade aracıdır. Color Studio'muzda ombre, sombre, balayage, dip boya ve tam renklendirme hizmetleri sunuyoruz. Her ton, cilt tonunuza ve tarzınıza özel seçilir.",
+      "Uluslararası markalardan premium boyalar kullanıyoruz. Renk danışmanlığı ile birlikte size en uygun tekniği belirliyor, saç sağlığınızı koruyarak muhteşem sonuçlar elde ediyoruz.",
     ],
-    process: [
-      {
-        step: 1,
-        title: "SEO Denetimi",
-        description:
-          "Mevcut sitenizi tarıyoruz. Teknik hatalar, içerik boşlukları ve rakip fırsatları tespit ediyoruz.",
-      },
-      {
-        step: 2,
-        title: "Anahtar Kelime & İçerik Planı",
-        description:
-          "Hedef anahtar kelimeleri belirliyoruz. İçerik takvimi ve optimizasyon stratejisi oluşturuyoruz.",
-      },
-      {
-        step: 3,
-        title: "Uygulama & Optimizasyon",
-        description:
-          "On-page SEO, teknik düzeltmeler ve içerik güncellemeleri yapıyoruz. Backlink stratejisi uyguluyoruz.",
-      },
-      {
-        step: 4,
-        title: "Raporlama & İterasyon",
-        description:
-          "Aylık performans raporları sunuyoruz. Verilere dayalı iyileştirmelerle sürekli ilerleme sağlıyoruz.",
-      },
-    ],
-    technologies: [
-      { name: "Google Analytics", icon: "BarChart" },
-      { name: "Search Console", icon: "Search" },
-      { name: "Ahrefs/SEMrush", icon: "Target" },
-      { name: "Schema Markup", icon: "FileCode" },
-    ],
-    whyUs: [
-      "White-hat SEO prensipleri; kalıcı ve sürdürülebilir sonuçlar",
-      "Şeffaf raporlama ile her adımda bilgilendirme",
-      "Yerel ve uluslararası pazar odaklı stratejiler",
-      "İçerik ve teknik SEO entegrasyonu",
-      "Rakip analizi ile fırsat odaklı yaklaşım",
+    details: [
+      "Ombre",
+      "Sombre",
+      "Balayage",
+      "Dip Boya",
+      "Tam Renklendirme",
+      "Gri Kapatma",
+      "Babuşka",
     ],
     faqs: [
       {
-        question: "SEO sonuçları ne zaman görülür?",
+        question: "İlk kez boya yaptıracaklar için ne önerirsiniz?",
         answer:
-          "SEO uzun vadeli bir yatırımdır. İlk iyileştirmeler 2-3 ay içinde görülebilir; anlamlı trafik artışı genellikle 4-6 ay sürer. Rekabetçi sektörlerde bu süre uzayabilir.",
+          "Önce ücretsiz renk danışmanlığı almanızı öneririz. Cilt tonunuza, saç yapınıza ve yaşam tarzınıza uygun renk ve teknik belirlenir.",
       },
       {
-        question: "Sadece yerel SEO hizmeti alabilir miyim?",
+        question: "Boyadan sonra bakım gerekir mi?",
         answer:
-          "Evet. Google İşletmem (Google Business Profile) optimizasyonu, yerel anahtar kelimeler ve bölgesel içerik stratejisiyle yerel SEO paketleri sunuyoruz.",
+          "Evet. Renkli saçlar özel bakım ister. Size uygun şampuan, maske ve bakım ürünleri öneriyoruz.",
       },
       {
-        question: "Mevcut SEO ajansımdan geçiş yaparsam sıralamalarım düşer mi?",
+        question: "Balayage ne kadar sürer?",
         answer:
-          "Doğru geçiş planıyla hayır. Mevcut çalışmaları analiz edip, değeri koruyarak devralıyoruz. Geçiş sürecinde dikkatli ilerleyerek sıralama kaybını önlüyoruz.",
+          "Saç uzunluğuna ve yoğunluğuna göre 2-4 saat arasında değişir. Kahve ve atıştırmalık ikramlarımız eşliğinde rahat bir deneyim sunuyoruz.",
       },
     ],
-    metaTitle: "SEO & Dijital Pazarlama Stratejileri | Ladda Studio",
+    metaTitle: "Renklendirme | Ombre, Balayage | Ladda Studio",
     metaDescription:
-      "Organik trafik, anahtar kelime optimizasyonu ve dijital pazarlama. Veri odaklı SEO stratejileri ile Google'da üst sıralara çıkın.",
+      "Ombre, sombre, balayage ve dip boya. İstanbul'da premium saç renklendirme hizmeti.",
   },
   {
-    slug: "brand-identity",
-    title: "Marka Kimliği & Kurumsal Görsel Dil",
-    shortTitle: "Marka Kimliği",
-    description:
-      "Unutulmaz, tutarlı ve değer yaratan marka kimlikleri tasarlıyoruz.",
-    icon: "Award",
+    slug: "hair-care",
+    shortTitle: "Hair Care",
+    title: "Saç Bakım & Tedavi",
+    description: "Keratin, botoks ve saç kurtarma tedavileri.",
+    icon: "Sparkles",
+    priceRange: "₺1.200 - ₺4.000",
     intro: [
-      "Marka kimliği, logonuzdan çok daha fazlasıdır. Renk paletiniz, tipografiniz, görsel diliniz ve tonunuz bir araya gelerek müşterilerinizin sizi nasıl algıladığını belirler. Güçlü bir marka kimliği, güven oluşturur ve rakiplerinizden sizi ayırır.",
-      "Ladda Studio'da marka stratejisiyle tasarımı birleştiriyoruz. Önce hedef kitlenizi, değerlerinizi ve pazar konumunuzu anlıyoruz. Ardından bu bilgileri görsel bir dile dönüştürüyoruz. Logo, kurumsal kimlik, sosyal medya tasarımları ve marka kılavuzu dahil eksiksiz paketler sunuyoruz.",
-      "Yeni marka oluşturma, marka yenileme veya marka genişletme projelerinde deneyimliyiz. Her projede, markanızın uzun vadede ölçeklenebilir ve tutarlı kalmasını sağlayacak sistemler kuruyoruz.",
+      "Sağlıklı saç, güzel saçtır. Keratin bakımı, saç botoksu, protein tedavileri ve saç kurtarma protokolleri ile saçınızı güçlendiriyor, parlaklık ve yumuşaklık kazandırıyoruz.",
+      "Her saç tipi farklı ihtiyaç duyar. Uzman ekibimiz saç analizi yaparak size özel bir bakım planı oluşturur. Ürünlerimiz sert kimyasallar içermez; doğal ve etkili formüller tercih ediyoruz.",
     ],
-    process: [
-      {
-        step: 1,
-        title: "Marka Keşfi",
-        description:
-          "Workshop ve anketlerle markanızın DNA'sını çıkarıyoruz. Misyon, vizyon ve hedef kitle netleştiriliyor.",
-      },
-      {
-        step: 2,
-        title: "Konsept & Moodboard",
-        description:
-          "Rekabet ve trend analizi yapıyoruz. Görsel yön ve konsept önerileri sunuyoruz.",
-      },
-      {
-        step: 3,
-        title: "Tasarım & Uygulama",
-        description:
-          "Logo varyasyonları, renk paleti ve tipografi belirliyoruz. Kartvizit, antetli kağıt, sosyal medya şablonları oluşturuyoruz.",
-      },
-      {
-        step: 4,
-        title: "Marka Kılavuzu",
-        description:
-          "Kullanım kurallarını içeren marka kılavuzu hazırlıyoruz. Tutarlılık için referans doküman teslim ediyoruz.",
-      },
-    ],
-    technologies: [
-      { name: "Adobe Illustrator", icon: "PenTool" },
-      { name: "Figma", icon: "Layers" },
-      { name: "Brand Guidelines", icon: "BookOpen" },
-    ],
-    whyUs: [
-      "Strateji odaklı tasarım; sadece güzel değil, anlamlı markalar",
-      "Ölçeklenebilir kimlik sistemleri",
-      "Print ve dijital uyumlu çıktılar",
-      "Marka kılavuzu ile uzun vadeli tutarlılık",
-      "Rekabetçi fiyat ve esnek paket seçenekleri",
+    details: [
+      "Keratin Bakımı",
+      "Saç Botoksu",
+      "Protein Tedavisi",
+      "Saç Kurtarma",
+      "Nem Maskesi",
+      "Saç Derisi Masajı",
     ],
     faqs: [
       {
-        question: "Sadece logo mu yoksa tam marka kimliği mi?",
+        question: "Keratin bakımı ne kadar sürer?",
         answer:
-          "İkisini de sunuyoruz. Bütçenize göre sadece logo, logo + temel uygulamalar veya tam kurumsal kimlik paketi seçebilirsiniz. İhtiyacınıza göre özelleştiriyoruz.",
+          "İşlem 2-3 saat sürer. Sonuç 2-4 ay boyunca kalıcıdır. Düzleştirici kullanımı azalır, saç daha yönetilebilir olur.",
       },
       {
-        question: "Mevcut markamı yenileyebilir misiniz?",
+        question: "Saç botoksu ile keratin farkı nedir?",
         answer:
-          "Evet. Mevcut marka değerini koruyarak modernize ediyoruz. Köklü değişiklik veya minimal güncelleme seçenekleri sunuyoruz.",
+          "Keratin daha çok düzleştirme ve hacim verme odaklıdır. Botoks ise nemlendirme, onarım ve parlaklık sağlar. İkisi birlikte de uygulanabilir.",
       },
       {
-        question: "Marka kılavuzu neden önemli?",
+        question: "Hangi sıklıkta bakım yaptırmalıyım?",
         answer:
-          "Marka kılavuzu, logonuzun, renklerinizin ve tipografinizin nasıl kullanılacağını tanımlar. İç veya dış paydaşlarınız tutarlı uygulama yapabilsin diye referans görevi görür.",
+          "Saç tipinize göre 4-8 haftada bir maske veya tedavi öneriyoruz. Danışmanlıkta kişisel program oluşturulur.",
       },
     ],
-    metaTitle: "Marka Kimliği & Kurumsal Görsel Dil | Ladda Studio",
+    metaTitle: "Saç Bakım & Tedavi | Keratin, Botoks | Ladda Studio",
     metaDescription:
-      "Logo, kurumsal kimlik ve marka stratejisi. Unutulmaz ve tutarlı marka kimlikleri tasarlıyoruz.",
+      "Keratin bakımı, saç botoksu ve protein tedavileri. Saçınıza profesyonel bakım.",
   },
   {
-    slug: "ui-ux-design",
-    title: "UI/UX Tasarım & Kullanıcı Deneyimi",
-    shortTitle: "UI/UX Tasarım",
-    description:
-      "Kullanıcı odaklı, sezgisel ve dönüşüm yaratan arayüz tasarımları.",
-    icon: "Layout",
+    slug: "bridal-special",
+    shortTitle: "Bridal & Special",
+    title: "Gelin & Özel Günler",
+    description: "Gelin başı, nişan saçı ve özel günler için tasarım.",
+    icon: "Heart",
+    priceRange: "₺2.500 - ₺8.000",
     intro: [
-      "Kullanıcı deneyimi (UX) ve arayüz tasarımı (UI), dijital ürünlerinizin başarısını doğrudan etkiler. Güzel bir tasarım yeterli değildir; kullanıcıların hedeflerine kolayca ulaşması, karışıklık yaşamaması ve olumlu bir deneyim yaşaması gerekir. Bu da dönüşüm oranlarınızı artırır.",
-      "Ladda Studio'da kullanıcı araştırması, bilgi mimarisi, wireframe ve prototipleme süreçlerini titizlikle uyguluyoruz. Her tasarım kararı veri ve kullanıcı geri bildirimleriyle destekleniyor. Web siteleri, mobil uygulamalar ve SaaS ürünleri için UI/UX hizmeti sunuyoruz.",
-      "Figma ve benzeri araçlarla yüksek kaliteli prototipler hazırlıyoruz. Geliştirme ekiplerinizle sorunsuz entegrasyon için design system ve component library oluşturuyoruz. Erişilebilirlik (a11y) standartlarına uygun tasarımlar üretiyoruz.",
+      "Hayatınızın en özel gününde saçınız mükemmel görünmeli. Gelin başı, nişan saçı, düğün öncesi bakım ve özel gün tasarımları için Ladda Studio yanınızda.",
+      "Deneme seansları ile tam istediğiniz görünümü yakalıyoruz. Elmas, inciler veya çiçeklerle süslenmiş romantik topuzlardan modern dalgalı saçlara kadar hayalinizdeki stili yaratıyoruz.",
     ],
-    process: [
-      {
-        step: 1,
-        title: "Araştırma & Analiz",
-        description:
-          "Kullanıcı görüşmeleri, rakip analizi ve hedef kitle profillemesi yapıyoruz. Pain point'leri tespit ediyoruz.",
-      },
-      {
-        step: 2,
-        title: "Bilgi Mimarisi & Wireframe",
-        description:
-          "Site haritası ve kullanıcı akışları oluşturuyoruz. Düşük doğruluklu wireframe'lerle yapıyı netleştiriyoruz.",
-      },
-      {
-        step: 3,
-        title: "UI Tasarım & Prototip",
-        description:
-          "Yüksek doğruluklu ekran tasarımları hazırlıyoruz. Tıklanabilir prototiplerle test ediyoruz.",
-      },
-      {
-        step: 4,
-        title: "Test & İterasyon",
-        description:
-          "Kullanıcı testleri yapıyoruz. Geri bildirimlere göre tasarımı iyileştiriyoruz. Geliştirme için spec teslim ediyoruz.",
-      },
-    ],
-    technologies: [
-      { name: "Figma", icon: "Layers" },
-      { name: "Prototyping", icon: "MousePointer" },
-      { name: "Design Systems", icon: "Grid" },
-      { name: "Usability Testing", icon: "Users" },
-    ],
-    whyUs: [
-      "Kullanıcı araştırması temelli tasarım kararları",
-      "Mobil-first ve responsive yaklaşım",
-      "Erişilebilirlik (WCAG) standartlarına uyum",
-      "Geliştirme ekipleriyle uyumlu design handoff",
-      "Sürekli test ve iterasyon kültürü",
+    details: [
+      "Gelin Başı",
+      "Nişan Saçı",
+      "Deneme Seansı",
+      "Düğün Öncesi Bakım",
+      "Özel Gün Tasarımı",
+      "Aksesuar Entegrasyonu",
     ],
     faqs: [
       {
-        question: "UI ve UX arasındaki fark nedir?",
+        question: "Gelin paketi ne içerir?",
         answer:
-          "UX (User Experience) kullanıcının ürünle etkileşiminin bütününü kapsar: akış, bilgi mimarisi, kullanılabilirlik. UI (User Interface) ise görsel tasarım, renkler, tipografi ve butonlar gibi arayüz öğeleridir. İkisi birlikte güçlü bir deneyim yaratır.",
+          "Deneme seansı, düğün günü saç ve makyaj, aksesuar kullanımı dahildir. Paketler düğün büyüklüğüne göre özelleştirilir.",
       },
       {
-        question: "Mevcut ürünüm için UX denetimi yapabilir misiniz?",
+        question: "Deneme seansı ne zaman yapılmalı?",
         answer:
-          "Evet. Mevcut arayüzünüzü analiz edip kullanılabilirlik sorunlarını, dönüşüm engellerini ve iyileştirme fırsatlarını raporluyoruz. Ardından öncelikli öneriler sunuyoruz.",
+          "Düğünden 1-2 ay önce öneriyoruz. Böylece gerekirse ek deneme veya değişiklik yapılabilir.",
       },
       {
-        question: "Tasarımları geliştirme ekibime nasıl aktarıyorsunuz?",
+        question: "Salona mı yoksa mekana mı geliyorsunuz?",
         answer:
-          "Figma üzerinden geliştirici modu, CSS/spacing bilgileri ve component spec'leri sağlıyoruz. Gerekirse geliştirme ekibinizle sync toplantıları yapıyoruz.",
+          "Her iki seçenek de mevcuttur. Mekan hizmeti için ek ücret ve ulaşım süresi değerlendirilir.",
       },
     ],
-    metaTitle: "UI/UX Tasarım & Kullanıcı Deneyimi | Ladda Studio",
+    metaTitle: "Gelin Başı & Özel Günler | Ladda Studio",
     metaDescription:
-      "Kullanıcı odaklı arayüz tasarımı, wireframe, prototip ve usability test. Dönüşüm odaklı UI/UX çözümleri.",
+      "Gelin başı, nişan saçı ve düğün öncesi bakım. Hayalinizdeki gün için saç tasarımı.",
   },
 ];
 
-// ============ PROJELER ============
+// ============ EKİP (STİLİSTLER) ============
 
-export interface Project {
+export interface TeamMember {
   slug: string;
-  title: string;
-  client: string;
-  category: string;
-  description: string;
+  name: string;
+  role: string;
+  specialty: string;
   image: string;
-  tags: string[];
-  year: string;
-  link?: string;
-  content?: string[];
+  bio?: string;
 }
 
-export const projects: Project[] = [
+export const teamMembers: TeamMember[] = [
   {
-    slug: "tech-startup-rebrand",
-    title: "Tech Startup Marka Yenileme",
-    client: "Anonim",
-    category: "Marka Kimliği",
-    description:
-      "Yeni nesil bir SaaS şirketi için sıfırdan marka kimliği ve web sitesi tasarımı.",
-    image: "/projects/tech-startup.jpg",
-    tags: ["Branding", "Web Design", "UI/UX"],
-    year: "2024",
-    link: "https://example.com",
-    content: [
-      "Müşterimiz, B2B SaaS pazarına giren yeni bir teknoloji şirketiydi. Mevcut kimlikleri belirsiz ve rakiplerinden ayırt edilemez durumdaydı. Hedef kitleleri CTO'lar ve teknik karar vericilerdi; bu yüzden güvenilir, modern ve profesyonel bir görünüm istiyorlardı.",
-      "Marka keşfi workshop'unda değer önerilerini netleştirdik: hız, güvenilirlik ve yenilik. Bu üç temayı görsel dile yansıttık. Neon yeşil (#CCFF00) accent rengi enerji ve ilerlemeyi simgelerken, koyu arka plan premium his veriyordu.",
-      "Logo, kurumsal kimlik seti, web sitesi ve sosyal medya şablonları teslim ettik. Launch sonrası marka bilinirliği %40 arttı.",
-    ],
+    slug: "stylist-1",
+    name: "Elif Yılmaz",
+    role: "Top Stylist",
+    specialty: "Kesim & Şekillendirme",
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&h=800&fit=crop",
+    bio: "15 yıllık deneyim. Milano ve Paris'te eğitim aldı.",
   },
   {
-    slug: "ecommerce-platform",
-    title: "E-Ticaret Platformu Redesign",
-    client: "Anonim",
-    category: "Web Tasarım",
-    description:
-      "Mevcut e-ticaret sitesinin performans ve dönüşüm odaklı yeniden tasarımı.",
-    image: "/projects/ecommerce.jpg",
-    tags: ["E-Commerce", "Next.js", "SEO"],
-    year: "2024",
-    content: [
-      "Müşterimizin e-ticaret sitesi yavaş, mobil uyumsuz ve dönüşüm oranları düşüktü. Core Web Vitals skorları kırmızı bölgedeydi. Next.js ile sıfırdan geliştirme kararı aldık.",
-      "Ürün sayfalarını optimize ettik: hızlı yükleme, net CTA'lar, güven rozetleri. Checkout akışını 4 adımdan 2'ye indirdik. SEO için dinamik meta etiketleri ve schema markup ekledik.",
-      "Sonuç: Sayfa yükleme süresi %60 azaldı, dönüşüm oranı %28 arttı, organik trafik 3 ay içinde 2x büyüdü.",
-    ],
+    slug: "stylist-2",
+    name: "Can Öztürk",
+    role: "Color Expert",
+    specialty: "Renklendirme & Balayage",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=800&fit=crop",
+    bio: "Uluslararası renk uzmanı. Wella Professionals sertifikalı.",
   },
   {
-    slug: "fintech-dashboard",
-    title: "Fintech Dashboard UI/UX",
-    client: "Anonim",
-    category: "UI/UX Tasarım",
-    description:
-      "Karmaşık finansal verileri sade ve anlaşılır şekilde sunan dashboard tasarımı.",
-    image: "/projects/fintech.jpg",
-    tags: ["UI/UX", "Dashboard", "Data Viz"],
-    year: "2023",
-    content: [
-      "Fintech müşterimiz, kullanıcıların portföy performansını takip ettiği bir dashboard istiyordu. Mevcut arayüz karmaşık ve öğrenme eğrisi yüksekti. Kullanıcı araştırması yaptık: kullanıcılar hızlı özet, detaylı grafikler ve karşılaştırma araçları istiyordu.",
-      "Bilgi mimarisini yeniden kurguladık. Ana metrikleri üstte, grafikleri ortada, detay tablolarını altta konumlandırdık. Koyu tema ile premium his ve göz yorgunluğunu azalttık. Erişilebilirlik için kontrast oranlarına dikkat ettik.",
-      "Prototip testlerinde görev tamamlama süresi %45 azaldı. Müşteri memnuniyeti skorları yükseldi.",
-    ],
+    slug: "stylist-3",
+    name: "Selin Demir",
+    role: "Senior Stylist",
+    specialty: "Bakım & Tedavi",
+    image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=800&fit=crop",
+    bio: "Keratin ve botoks uzmanı. Saç sağlığı odaklı yaklaşım.",
   },
   {
-    slug: "local-seo-campaign",
-    title: "Yerel SEO Kampanyası",
-    client: "Anonim",
-    category: "SEO & Pazarlama",
-    description:
-      "Çok şubeli perakende markası için yerel SEO ve Google İşletmem optimizasyonu.",
-    image: "/projects/local-seo.jpg",
-    tags: ["SEO", "Local SEO", "Google Business"],
-    year: "2023",
-    content: [
-      "Müşterimiz 15 şubeli bir perakende zinciriydi. Organik trafik düşüktü, Google İşletmem profilleri eksikti. Yerel aramalarda rakiplerin gerisindeydiler.",
-      "Her şube için Google İşletmem profili oluşturduk. NAP (Name, Address, Phone) tutarlılığını sağladık. Şube bazlı landing page'ler ve yerel anahtar kelime stratejisi uyguladık. Müşteri yorumları yönetimi için süreç kurdük.",
-      "6 ay içinde yerel aramalarda görünürlük %120 arttı. 12 şube ilk 3'e girdi.",
-    ],
+    slug: "stylist-4",
+    name: "Burak Kaya",
+    role: "Bridal Specialist",
+    specialty: "Gelin & Özel Günler",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop",
+    bio: "Özel günlerde hayalleri gerçeğe dönüştürüyor.",
   },
 ];
 
-// ============ ANA SAYFA İÇERİKLERİ ============
+// ============ GALERİ (LOOKBOOK) ============
+
+export interface GalleryItem {
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
+  aspect?: "portrait" | "landscape" | "square";
+}
+
+export const galleryItems: GalleryItem[] = [
+  {
+    slug: "look-1",
+    title: "Balayage Waves",
+    category: "Renklendirme",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop",
+    aspect: "portrait",
+  },
+  {
+    slug: "look-2",
+    title: "Classic Bob",
+    category: "Kesim",
+    image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=400&fit=crop",
+    aspect: "landscape",
+  },
+  {
+    slug: "look-3",
+    title: "Bridal Updo",
+    category: "Gelin",
+    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop",
+    aspect: "portrait",
+  },
+  {
+    slug: "look-4",
+    title: "Ombre Curls",
+    category: "Renklendirme",
+    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop",
+    aspect: "square",
+  },
+  {
+    slug: "look-5",
+    title: "Pixie Cut",
+    category: "Kesim",
+    image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&h=800&fit=crop",
+    aspect: "portrait",
+  },
+  {
+    slug: "look-6",
+    title: "Soft Waves",
+    category: "Şekillendirme",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop",
+    aspect: "landscape",
+  },
+  {
+    slug: "look-7",
+    title: "Sombre Long",
+    category: "Renklendirme",
+    image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&h=800&fit=crop",
+    aspect: "portrait",
+  },
+  {
+    slug: "look-8",
+    title: "Elegant Updo",
+    category: "Özel Gün",
+    image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600&h=600&fit=crop",
+    aspect: "square",
+  },
+];
+
+// ============ ANA SAYFA ============
 
 export const homeContent = {
   hero: {
-    title: "We Load Your",
-    titleAccent: "Digital Potential.",
+    title: "Your Hair,",
+    titleAccent: "Your Signature.",
     subtitle:
-      "Dijital varlığınızı bir üst seviyeye taşıyoruz. Web tasarım, SEO, marka kimliği ve UI/UX ile markanızı geleceğe yüklüyoruz.",
-    cta: "Projenizi Konuşalım",
-    ctaSecondary: "Projelerimizi İnceleyin",
+      "Modern kesimler, kişiye özel renklendirme ve profesyonel saç bakımı. İstanbul'un en prestijli kuaför stüdyosunda kendinizi keşfedin.",
+    cta: "Randevu Al",
+    ctaLink: "/contact",
   },
   servicesPreview: {
     title: "Hizmetlerimiz",
-    subtitle:
-      "Dijital dönüşüm yolculuğunuzda ihtiyacınız olan tüm çözümleri tek çatı altında sunuyoruz.",
+    subtitle: "Saçınıza özel, uzman ellerde.",
   },
-  workPreview: {
-    title: "Seçilmiş Projeler",
-    subtitle: "Farklı sektörlerden markalarla gerçekleştirdiğimiz işlere göz atın.",
+  teamPreview: {
+    title: "Meet the Artists",
+    subtitle: "Tutkulu ve deneyimli stilistlerimizle tanışın.",
   },
-  cta: {
-    title: "Dijital Potansiyelinizi Keşfedin",
-    subtitle:
-      "Projenizi konuşmak, fikir almak veya teklif almak için bizimle iletişime geçin.",
-    button: "İletişime Geçin",
-  },
-};
-
-// ============ HAKKIMIZDA İÇERİKLERİ ============
-
-export const aboutContent = {
-  story: {
-    title: "Ladda Hikayesi",
-    paragraphs: [
-      "Ladda, İsveççede 'yüklemek' veya 'şarj etmek' anlamına gelir. Biz de tam olarak bunu yapıyoruz: markaların dijital potansiyelini yüklüyor, enerji veriyor ve harekete geçiriyoruz.",
-      "2020'lerde kurulan Ladda Studio, dijital dünyanın hızla değiştiğini ve markaların bu değişime ayak uydurmak zorunda olduğunu gördü. Sadece 'güzel tasarım' veya 'SEO' yeterli değildi; bütüncül bir yaklaşım gerekiyordu. Strateji, tasarım ve teknolojiyi bir araya getirerek, müşterilerimizin rakiplerinin önüne geçmesini sağlıyoruz.",
-      "Kinetic Minimalism felsefemiz: hareket ve enerji, minimal ve odaklı tasarımla buluşuyor. Karanlık mod, neon vurgular ve akıcı animasyonlar sadece estetik tercih değil; teknolojik, premium ve güvenilir bir his yaratmak için kullanılıyor.",
-    ],
-  },
-  values: [
-    {
-      title: "Strateji Önce",
-      description:
-        "Her projede önce hedefi anlıyoruz. Tasarım ve geliştirme, stratejiden sonra gelir.",
-    },
-    {
-      title: "Şeffaflık",
-      description:
-        "Müşterilerimizi her adımda bilgilendiriyoruz. Gizli maliyet veya sürpriz yok.",
-    },
-    {
-      title: "Kalite",
-      description:
-        "Apple ve Awwwards seviyesinde iş çıkarıyoruz. Orta yol yok.",
-    },
-    {
-      title: "Sürdürülebilirlik",
-      description:
-        "Kısa vadeli hack'ler değil, uzun vadeli değer yaratan çözümler sunuyoruz.",
-    },
-  ],
-  team: {
-    title: "Ekibimiz",
-    subtitle:
-      "Tasarım, geliştirme ve pazarlama alanlarında uzmanlaşmış bir ekip.",
+  galleryPreview: {
+    title: "Lookbook",
+    subtitle: "En son çalışmalarımızdan ilham alın.",
   },
 };
 
 // ============ İLETİŞİM ============
 
 export const contactContent = {
-  title: "İletişime Geçin",
-  subtitle:
-    "Projenizi konuşmak, teklif almak veya sadece merhaba demek için formu doldurun.",
+  title: "Randevu & İletişim",
+  subtitle: "Hayalinizdeki saç için bizimle iletişime geçin.",
   form: {
     name: "Ad Soyad",
     email: "E-posta",
-    subject: "Konu",
-    message: "Mesajınız",
-    submit: "Gönder",
-    success: "Mesajınız alındı. En kısa sürede dönüş yapacağız.",
+    phone: "Telefon",
+    service: "Hizmet",
+    date: "Tercih Edilen Tarih",
+    message: "Notlarınız",
+    submit: "Randevu Talebi Gönder",
+    success: "Talebiniz alındı. En kısa sürede dönüş yapacağız.",
     error: "Bir hata oluştu. Lütfen tekrar deneyin.",
-  },
-  info: {
-    email: "info@ladda.studio",
-    address: "İstanbul, Türkiye",
   },
 };

@@ -2,30 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, TrendingUp, Award, Layout } from "lucide-react";
+import { Scissors, Palette, Sparkles, Heart, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Service } from "@/lib/data";
 
 const iconMap = {
-  Globe,
-  TrendingUp,
-  Award,
-  Layout,
-  Zap: Globe,
-  Atom: Globe,
-  Code: Globe,
-  Palette: Globe,
-  Server: Globe,
-  BarChart: TrendingUp,
-  Search: TrendingUp,
-  Target: TrendingUp,
-  FileCode: TrendingUp,
-  PenTool: Award,
-  Layers: Award,
-  BookOpen: Award,
-  MousePointer: Layout,
-  Grid: Layout,
-  Users: Layout,
+  Scissors,
+  Palette,
+  Sparkles,
+  Heart,
 };
 
 interface ServiceCardProps {
@@ -40,7 +25,7 @@ export default function ServiceCard({
   variant = "default",
 }: ServiceCardProps) {
   const IconComponent =
-    iconMap[service.icon as keyof typeof iconMap] || Globe;
+    iconMap[service.icon as keyof typeof iconMap] || Scissors;
 
   const content = (
     <motion.div
@@ -49,7 +34,7 @@ export default function ServiceCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
-        "group relative overflow-hidden rounded-xl border border-border bg-surface p-6 transition-all",
+        "group relative overflow-hidden rounded border border-border bg-surface p-6 transition-all",
         "bento-card hover:border-accent/30",
         variant === "bento" && "flex flex-col",
         variant === "compact" && "p-4"
@@ -58,11 +43,11 @@ export default function ServiceCard({
       <div className="flex items-start justify-between gap-4">
         <div
           className={cn(
-            "flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent",
+            "flex h-12 w-12 shrink-0 items-center justify-center border border-accent/30 text-accent",
             variant === "compact" && "h-10 w-10"
           )}
         >
-          <IconComponent size={variant === "compact" ? 20 : 24} />
+          <IconComponent size={variant === "compact" ? 20 : 24} strokeWidth={1.5} />
         </div>
         {variant !== "compact" && (
           <ArrowRight
@@ -74,7 +59,7 @@ export default function ServiceCard({
 
       <h3
         className={cn(
-          "mt-4 font-syne font-semibold text-zinc-100",
+          "mt-4 font-serif font-medium text-white",
           variant === "compact" ? "text-base" : "text-lg"
         )}
       >
@@ -88,6 +73,9 @@ export default function ServiceCard({
       >
         {service.description}
       </p>
+      {service.priceRange && variant === "bento" && (
+        <p className="mt-2 text-sm text-accent">{service.priceRange}</p>
+      )}
 
       {variant === "bento" && (
         <Link

@@ -6,7 +6,7 @@ import { services } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Hizmetler",
   description:
-    "Web tasarım, SEO, marka kimliği ve UI/UX tasarım hizmetleri. Dijital dönüşüm yolculuğunuzda Ladda Studio yanınızda.",
+    "Kesim, renklendirme, saç bakımı ve gelin başı. Ladda Studio'da saçınıza özel hizmetler.",
 };
 
 export default function ServicesPage() {
@@ -14,7 +14,7 @@ export default function ServicesPage() {
     <>
       <Hero
         title="Hizmetlerimiz"
-        subtitle="Dijital varlığınızı güçlendiren kapsamlı çözümler. Stratejiden tasarıma, geliştirmeden pazarlamaya tek çatı altında."
+        subtitle="Saçınıza özel, uzman ellerde. Kesimden renklendirmeye, bakımdan özel günlere."
         size="small"
       />
 

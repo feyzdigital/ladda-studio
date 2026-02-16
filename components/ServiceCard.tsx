@@ -2,17 +2,15 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Scissors, Sparkles, Grid3X3, CircleDot, Layers, Plus, ArrowRight } from "lucide-react";
+import { Sparkles, Waves, Grid3X3, CircleDot, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Service } from "@/lib/data";
 
 const iconMap = {
-  Scissors,
   Sparkles,
+  Waves,
   Grid3X3,
   CircleDot,
-  Layers,
-  Plus,
 };
 
 interface ServiceCardProps {
@@ -27,7 +25,7 @@ export default function ServiceCard({
   variant = "default",
 }: ServiceCardProps) {
   const IconComponent =
-    iconMap[service.icon as keyof typeof iconMap] || Scissors;
+    iconMap[service.icon as keyof typeof iconMap] || Sparkles;
 
   const content = (
     <motion.div
@@ -36,8 +34,8 @@ export default function ServiceCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
-        "group relative overflow-hidden rounded border border-border bg-surface p-6 transition-all",
-        "bento-card hover:border-accent/30",
+        "group relative overflow-hidden rounded border border-zinc-800 bg-zinc-950/50 p-6 transition-all hover:border-accent/30",
+        "bento-card",
         variant === "bento" && "flex flex-col",
         variant === "compact" && "p-4"
       )}
@@ -54,14 +52,15 @@ export default function ServiceCard({
         {variant !== "compact" && (
           <ArrowRight
             size={18}
-            className="shrink-0 text-muted transition-all group-hover:translate-x-1 group-hover:text-accent"
+            strokeWidth={1.5}
+            className="shrink-0 text-zinc-500 transition-all group-hover:translate-x-1 group-hover:text-accent"
           />
         )}
       </div>
 
       <h3
         className={cn(
-          "mt-4 font-serif font-medium text-white",
+          "mt-4 font-serif font-medium text-zinc-100",
           variant === "compact" ? "text-base" : "text-lg"
         )}
       >
@@ -69,23 +68,20 @@ export default function ServiceCard({
       </h3>
       <p
         className={cn(
-          "mt-2 text-muted",
+          "mt-2 text-zinc-400",
           variant === "compact" ? "text-sm" : "text-base"
         )}
       >
         {service.description}
       </p>
-      {service.priceRange && variant === "bento" && (
-        <p className="mt-2 text-sm text-accent">{service.priceRange}</p>
-      )}
 
       {variant === "bento" && (
         <Link
-          href={`/services/${service.slug}`}
-          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-muted"
+          href="/contact"
+          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
         >
-          Detayları İncele
-          <ArrowRight size={14} />
+          Randevu Oluştur
+          <ArrowRight size={14} strokeWidth={1.5} />
         </Link>
       )}
     </motion.div>

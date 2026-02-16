@@ -38,9 +38,9 @@ export default function Gallery({ items }: GalleryProps) {
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
           <div className="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform group-hover:translate-y-0">
-            <p className="font-serif text-lg font-medium text-white">
+            <p className="font-serif text-lg font-medium text-zinc-100">
               {item.title}
             </p>
             <p className="text-sm text-silver">{item.category}</p>

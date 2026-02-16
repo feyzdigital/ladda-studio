@@ -57,7 +57,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-2 w-full border border-zinc-800 bg-background px-4 py-3 text-zinc-100 placeholder:text-zinc-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="Adınız Soyadınız"
           />
         </div>
@@ -72,7 +72,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-2 w-full border border-zinc-800 bg-background px-4 py-3 text-zinc-100 placeholder:text-zinc-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="ornek@email.com"
           />
         </div>
@@ -89,7 +89,7 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-2 w-full border border-zinc-800 bg-background px-4 py-3 text-zinc-100 placeholder:text-zinc-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="+90 5XX XXX XX XX"
           />
         </div>
@@ -103,7 +103,7 @@ export default function ContactForm() {
             value={formData.service}
             onChange={handleChange}
             required
-            className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-2 w-full border border-zinc-800 bg-background px-4 py-3 text-zinc-100 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           >
             <option value="">Hizmet seçin</option>
             {services.map((s) => (
@@ -125,7 +125,7 @@ export default function ContactForm() {
           name="date"
           value={formData.date}
           onChange={handleChange}
-          className="mt-2 w-full border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="mt-2 w-full border border-zinc-800 bg-background px-4 py-3 text-zinc-100 placeholder:text-zinc-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           placeholder="Örn: 15 Mart, öğleden sonra"
         />
       </div>
@@ -140,7 +140,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="mt-2 w-full resize-none border border-border bg-background px-4 py-3 text-zinc-100 placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="mt-2 w-full resize-none border border-zinc-800 bg-background px-4 py-3 text-zinc-100 placeholder:text-zinc-500 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           placeholder="Özel istekleriniz veya notlarınız..."
         />
       </div>
@@ -160,7 +160,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex items-center gap-2 border border-accent bg-accent px-6 py-3 font-medium text-background transition-colors hover:bg-accent-muted disabled:opacity-50"
+        className="inline-flex items-center gap-2 border border-accent bg-accent px-6 py-3 font-medium text-zinc-950 transition-colors hover:bg-accent-muted disabled:opacity-50"
       >
         {status === "loading" ? (
           <>

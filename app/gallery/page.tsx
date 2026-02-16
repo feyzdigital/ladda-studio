@@ -18,7 +18,7 @@ export default function GalleryPage() {
         size="small"
       />
 
-      <section className="border-t border-border px-6 py-24 lg:px-8">
+      <section className="border-t border-zinc-800 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <Gallery items={galleryItems} />
         </div>

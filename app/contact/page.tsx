@@ -19,11 +19,11 @@ export default function ContactPage() {
         size="small"
       />
 
-      <section className="border-t border-border px-6 py-24 lg:px-8">
+      <section className="border-t border-zinc-800 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-16 lg:grid-cols-2">
             <div>
-              <h2 className="font-serif text-xl font-medium text-white">
+              <h2 className="font-serif text-xl font-medium text-zinc-100">
                 Randevu Talebi
               </h2>
               <div className="mt-8">
@@ -32,20 +32,20 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-medium text-white">
+              <h2 className="font-serif text-xl font-medium text-zinc-100">
                 İletişim Bilgileri
               </h2>
               <div className="mt-8 space-y-6">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center gap-3 text-muted transition-colors hover:text-accent"
+                  className="flex items-center gap-3 text-zinc-400 transition-colors hover:text-accent"
                 >
                   <Mail size={20} />
                   {siteConfig.email}
                 </a>
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="flex items-center gap-3 text-muted transition-colors hover:text-accent"
+                  className="flex items-center gap-3 text-zinc-400 transition-colors hover:text-accent"
                 >
                   <Phone size={20} />
                   {siteConfig.phone}
@@ -54,12 +54,12 @@ export default function ContactPage() {
                   href={siteConfig.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-muted transition-colors hover:text-accent"
+                  className="flex items-center gap-3 text-zinc-400 transition-colors hover:text-accent"
                 >
                   <Instagram size={20} />
                   @laddastudio
                 </a>
-                <div className="flex items-center gap-3 text-muted">
+                <div className="flex items-center gap-3 text-zinc-400">
                   <MapPin size={20} />
                   {siteConfig.address}
                 </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                 <h3 className="font-serif text-sm font-medium uppercase tracking-wider text-zinc-400">
                   Çalışma Saatleri
                 </h3>
-                <div className="mt-4 space-y-2 text-muted">
+                <div className="mt-4 space-y-2 text-zinc-400">
                   <p>Pzt - Cuma: {siteConfig.hours.weekdays}</p>
                   <p>Cumartesi: {siteConfig.hours.saturday}</p>
                   <p>Pazar: {siteConfig.hours.sunday}</p>

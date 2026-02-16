@@ -30,9 +30,9 @@ export default function TeamSection({ showAll = false }: TeamSectionProps) {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="font-serif text-xl font-medium text-white">
+              <h3 className="font-serif text-xl font-medium text-zinc-100">
                 {member.name}
               </h3>
               <p className="mt-1 text-sm font-medium text-accent">

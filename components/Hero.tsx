@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -27,45 +27,53 @@ export default function Hero({
   className,
   backgroundImage = "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop",
 }: HeroProps) {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
+
   return (
     <section
       className={cn(
         "relative overflow-hidden",
-        size === "default" ? "min-h-[90vh] lg:min-h-[95vh]" : "py-24",
+        size === "default" ? "min-h-screen" : "py-24",
         className
       )}
     >
-      {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src={backgroundImage}
-          alt=""
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+        <motion.div style={{ y }} className="absolute inset-0">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover scale-110"
+            priority
+            sizes="100vw"
+          />
+        </motion.div>
         <div
-          className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"
+          className="absolute inset-0 bg-gradient-to-b from-zinc-950/85 via-zinc-950/70 to-zinc-950"
           aria-hidden
         />
       </div>
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center justify-center px-6 py-24 text-center lg:px-8">
+      <motion.div
+        style={{ opacity: size === "default" ? opacity : 1 }}
+        className="relative mx-auto flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center lg:px-8"
+      >
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className={cn(
-            "font-serif font-medium tracking-wide text-white",
+            "font-serif font-medium tracking-wide text-zinc-100",
             size === "default"
               ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
               : "text-3xl sm:text-4xl md:text-5xl"
           )}
         >
-          {title}{" "}
+          {title}
           {titleAccent && (
-            <span className="text-accent gold-glow">{titleAccent}</span>
+            <span className="text-accent gold-glow"> {titleAccent}</span>
           )}
         </motion.h1>
 
@@ -74,7 +82,7 @@ export default function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="mx-auto mt-6 max-w-2xl text-lg text-silver sm:text-xl"
+            className="mx-auto mt-6 max-w-2xl text-lg text-zinc-400 sm:text-xl"
           >
             {subtitle}
           </motion.p>
@@ -89,17 +97,18 @@ export default function Hero({
           >
             <Link
               href={ctaLink}
-              className="group inline-flex items-center gap-2 border border-accent bg-accent/10 px-8 py-3 font-medium text-accent transition-all hover:bg-accent hover:text-background"
+              className="group inline-flex items-center gap-2 border border-accent bg-accent/10 px-8 py-3 font-medium text-accent transition-all hover:border-accent-hover hover:bg-accent-hover/10 hover:text-accent-hover"
             >
               {cta}
               <ArrowRight
                 size={18}
+                strokeWidth={1.5}
                 className="transition-transform group-hover:translate-x-1"
               />
             </Link>
           </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }

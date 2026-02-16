@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,19 +19,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ladda Studio | Beşiktaş'ta Afrika Esintisi",
+    default: "Ladda Studio | İstanbul'un Premium Afro Saç Stüdyosu",
     template: "%s | Ladda Studio",
   },
   description:
-    "Beşiktaş'ta Afrika örgüsü, mısır örgüsü, burgu örgü ve saç uzatma. Profesyonel ekibimizle randevu alın.",
+    "İstanbul'un Premium Afro Saç Stüdyosu. Afrika örgüsü, Afro dalgası, Cornrows, Twist. Urban Hair Artistry.",
   keywords: [
     "afrika örgüsü",
+    "afro dalgası",
+    "cornrows",
+    "twist",
     "mısır örgüsü",
     "burgu örgü",
-    "afro dalgası",
-    "örgü kaynak",
-    "iğne kaynak",
-    "Beşiktaş kuaför",
+    "İstanbul kuaför",
     "Ladda Studio",
   ],
   authors: [{ name: "Ladda Studio" }],
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} min-h-screen font-sans antialiased`}
       >
+        <SchemaMarkup />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

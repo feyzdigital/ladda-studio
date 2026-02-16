@@ -1,12 +1,11 @@
-import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import ServiceCard from "@/components/ServiceCard";
+import ServiceGridCard from "@/components/ServiceGridCard";
 import { services } from "@/lib/data";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Hizmetler",
   description:
-    "Afrika örgüsü, mısır örgüsü, burgu örgü, örgü kaynak ve iğne kaynak. Ladda Studio Beşiktaş'ta saçınıza özel hizmetler.",
+    "Afrika örgüsü, Afro dalgası, Cornrows, Twist. İstanbul'un Premium Afro Saç Stüdyosu. Urban Hair Artistry.",
 };
 
 export default function ServicesPage() {
@@ -14,19 +13,18 @@ export default function ServicesPage() {
     <>
       <Hero
         title="Hizmetlerimiz"
-        subtitle="Afrika örgüsünden saç uzatmaya. Saçınıza özel, uzman ellerde."
+        subtitle="Afrika örgüsünden twist'e. Saçınıza özel, uzman ellerde."
         size="small"
       />
 
-      <section className="border-t border-border px-6 py-24 lg:px-8">
+      <section className="border-t border-zinc-800 bg-zinc-950 px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service, index) => (
-              <ServiceCard
+              <ServiceGridCard
                 key={service.slug}
                 service={service}
                 index={index}
-                variant="bento"
               />
             ))}
           </div>

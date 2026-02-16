@@ -1,15 +1,15 @@
 /**
- * Ladda Studio - Lüks Kuaför & Güzellik Salonu
+ * Ladda Studio - Beşiktaş'ta Afrika Esintisi
  * Merkezi Veri Yapısı
  */
 
 export const siteConfig = {
   name: "Ladda Studio",
-  slogan: "Your Hair, Your Signature.",
-  tagline: "The Art of Hair.",
+  slogan: "Beşiktaş'ta Afrika Esintisi",
+  tagline: "Şimdi Kendini Keşfet",
   email: "info@ladda.studio",
   phone: "+90 212 000 00 00",
-  address: "Nişantaşı, İstanbul",
+  address: "Beşiktaş, İstanbul",
   instagram: "https://instagram.com/laddastudio",
   hours: {
     weekdays: "10:00 - 20:00",
@@ -18,7 +18,7 @@ export const siteConfig = {
   },
 };
 
-// ============ HİZMETLER (KUAFÖR) ============
+// ============ HİZMETLER ============
 
 export interface Service {
   slug: string;
@@ -26,6 +26,7 @@ export interface Service {
   shortTitle: string;
   description: string;
   icon: string;
+  image?: string;
   priceRange?: string;
   intro: string[];
   details: string[];
@@ -36,169 +37,249 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    slug: "cut-style",
-    shortTitle: "Cut & Style",
-    title: "Kesim & Şekillendirme",
-    description: "Modern kesimler, fön ve kişiye özel şekillendirme.",
+    slug: "afrika-orgusu",
+    shortTitle: "Afrika Örgüsü",
+    title: "Afrika Örgüsü Uzmanlığı",
+    description: "Saçınıza modern ve zamansız bir hava katan ince örgü tekniği.",
     icon: "Scissors",
-    priceRange: "₺800 - ₺2.500",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=600&fit=crop",
+    priceRange: "₺1.500 - ₺4.000",
     intro: [
-      "Saçınız sizin imzanızdır. Ladda Studio'da her kesim, yüz hatlarınıza ve yaşam tarzınıza özel tasarlanır. Klasik bob'tan katlı kesimlere, pixie'den uzun katlara kadar geniş bir yelpazede hizmet sunuyoruz.",
-      "Deneyimli stilistlerimiz, en son trendleri kişisel tarzınızla harmanlayarak size özel bir görünüm yaratır. Fön, düzleştirme ve şekillendirme dahil tüm işlemler premium ürünlerle gerçekleştirilir.",
+      "Afrika örgüsü, saçınıza modern ve zamansız bir hava katarak hem estetik hem de pratik bir stil sunar. Bu teknikle saçlarınızın doğal yapısı korunarak, ince örgülerle sentetik ya da doğal saçlar eklenerek uzunluk ve yoğunluk kazandırılır.",
+      "Uzman ekibimiz, yüz hatlarınıza ve tarzınıza en uygun örgü modelini belirleyerek size özel bir görünüm yaratır. Uzun ömürlü ve bakımı kolay bir stil elde edersiniz.",
     ],
     details: [
-      "Kadın Kesimi",
-      "Erkek Kesimi",
-      "Çocuk Kesimi",
-      "Fön & Blow Dry",
-      "Düzleştirme",
+      "İnce Örgü",
+      "Orta Kalınlık Örgü",
+      "Kalın Örgü",
+      "Doğal Saç Ekimi",
+      "Sentetik Saç Ekimi",
+      "Renkli Örgü",
+    ],
+    faqs: [
+      {
+        question: "Afrika örgüsü ne kadar sürede yapılır?",
+        answer:
+          "Saç uzunluğuna ve örgü kalınlığına göre 4-8 saat arasında değişir. Rahat bir ortamda kahve ve ikramlar eşliğinde hizmet veriyoruz.",
+      },
+      {
+        question: "Örgü ne kadar süre kalır?",
+        answer:
+          "Doğru bakımla 6-8 hafta boyunca şeklini korur. Bu süre sonunda yenileme veya farklı bir model deneyebilirsiniz.",
+      },
+      {
+        question: "Kendi saçıma zarar verir mi?",
+        answer:
+          "Profesyonel uygulama ve doğru ürünlerle saçınızın doğal yapısı korunur. Örgü öncesi ve sonrası bakım önerileri sunuyoruz.",
+      },
+    ],
+    metaTitle: "Afrika Örgüsü Uzmanlığı | Ladda Studio Beşiktaş",
+    metaDescription:
+      "Beşiktaş'ta Afrika örgüsü. İnce örgü tekniği ile uzunluk ve hacim. Uzman ellerde.",
+  },
+  {
+    slug: "afro-dalgasi",
+    shortTitle: "Afro Dalgası",
+    title: "Afro Dalgası Saç Modeli",
+    description: "Saça volüm, hareket ve doğal dalga formu kazandıran özel uygulama.",
+    icon: "Sparkles",
+    image: "https://images.unsplash.com/photo-1532635241-17e820acc59f?w=800&h=600&fit=crop",
+    priceRange: "₺800 - ₺2.500",
+    intro: [
+      "Afro dalgası, saça volüm, hareket ve doğal dalga formu kazandıran özel bir uygulamadır. Saçınızın kendi dokusuyla uyumlu bir görünüm elde edilmesini sağlayarak, hem modern hem etnik bir stil sunar.",
+      "Doğal saç yapınıza saygı gösteren bu teknik, günlük kullanım için pratik ve şık bir alternatiftir. Uzman stilistlerimiz size en uygun dalga yoğunluğunu belirler.",
+    ],
+    details: [
+      "Doğal Dalga",
+      "Yoğun Dalga",
+      "Hafif Dalga",
+      "Saç Bakımı",
       "Şekillendirme",
     ],
     faqs: [
       {
-        question: "Randevu ne kadar süre önceden alınmalı?",
+        question: "Afro dalgası hangi saç tiplerine uygundur?",
         answer:
-          "Özellikle hafta sonu ve özel günlerde yoğunluk yaşanabildiği için en az 2-3 gün önceden randevu almanızı öneririz.",
+          "Özellikle kıvırcık ve dalgalı saç yapılarına ideal olmakla birlikte, düz saçlara da özel tekniklerle uygulanabilir.",
       },
       {
-        question: "Kesim süresi ne kadardır?",
+        question: "Ne kadar süre kalıcıdır?",
         answer:
-          "Kesim türüne göre 45 dakika ile 1,5 saat arasında değişir. Fön ve şekillendirme dahil toplam süre yaklaşık 1-2 saattir.",
+          "Bakıma bağlı olarak 2-4 hafta boyunca şeklini korur. Nemlendirici ürünlerle ömrü uzatılabilir.",
       },
       {
-        question: "Kendi ürünlerimi getirebilir miyim?",
+        question: "Yıkarken dikkat edilmesi gerekenler nelerdir?",
         answer:
-          "Salonumuzda profesyonel ürünler kullanıyoruz. Özel bir ürün kullanmak isterseniz, önceden bilgi verirseniz değerlendirebiliriz.",
+          "Ilık su ve nemlendirici şampuan kullanmanızı öneriyoruz. Kurutma sonrası bakım yağı uygulayabilirsiniz.",
       },
     ],
-    metaTitle: "Kesim & Şekillendirme | Ladda Studio",
+    metaTitle: "Afro Dalgası Saç Modeli | Ladda Studio Beşiktaş",
     metaDescription:
-      "Modern kesimler, fön ve kişiye özel şekillendirme. İstanbul'un en prestijli kuaför salonunda saçınıza yeni bir imza atın.",
+      "Beşiktaş'ta afro dalgası. Volüm ve doğal dalga formu. Profesyonel uygulama.",
   },
   {
-    slug: "color-studio",
-    shortTitle: "Color Studio",
-    title: "Renklendirme Stüdyosu",
-    description: "Ombre, balayage, sombre ve dip boya ile saçınıza hayat verin.",
-    icon: "Palette",
-    priceRange: "₺1.500 - ₺5.000",
+    slug: "misir-orgusu",
+    shortTitle: "Mısır Örgüsü",
+    title: "Mısır Örgüsü Sanatı",
+    description: "Saç tellerinin dipten şeritler halinde örüldüğü klasik Afrika stili.",
+    icon: "Grid3X3",
+    image: "https://images.unsplash.com/photo-1616394584738-fc7628d92f85?w=800&h=600&fit=crop",
+    priceRange: "₺1.200 - ₺3.500",
     intro: [
-      "Renk, kişiliğinizi yansıtan en güçlü ifade aracıdır. Color Studio'muzda ombre, sombre, balayage, dip boya ve tam renklendirme hizmetleri sunuyoruz. Her ton, cilt tonunuza ve tarzınıza özel seçilir.",
-      "Uluslararası markalardan premium boyalar kullanıyoruz. Renk danışmanlığı ile birlikte size en uygun tekniği belirliyor, saç sağlığınızı koruyarak muhteşem sonuçlar elde ediyoruz.",
+      "Mısır örgüsü, saç tellerinin dipten itibaren şeritler halinde sıkı ve düzenli bir şekilde örüldüğü klasik Afrika saç stilidir. Sadece estetik bir görünüm sunmakla kalmaz; aynı zamanda pratiklik ve uzun ömürlü kullanım avantajı da sağlar.",
+      "Farklı desen ve motiflerle kişiye özel tasarımlar yapıyoruz. Yaz aylarında serinletici, günlük hayatta pratik bir tercihtir.",
     ],
     details: [
-      "Ombre",
-      "Sombre",
-      "Balayage",
-      "Dip Boya",
-      "Tam Renklendirme",
-      "Gri Kapatma",
-      "Babuşka",
+      "Klasik Mısır Örgüsü",
+      "Desenli Mısır Örgüsü",
+      "Yarım Baş Örgü",
+      "Tam Baş Örgü",
+      "Örgü + Serbest Saç",
     ],
     faqs: [
       {
-        question: "İlk kez boya yaptıracaklar için ne önerirsiniz?",
+        question: "Mısır örgüsü ne kadar sürer?",
         answer:
-          "Önce ücretsiz renk danışmanlığı almanızı öneririz. Cilt tonunuza, saç yapınıza ve yaşam tarzınıza uygun renk ve teknik belirlenir.",
+          "Desen karmaşıklığına göre 2-5 saat arasında değişir. Detaylı bilgi için randevu sırasında değerlendirme yapıyoruz.",
       },
       {
-        question: "Boyadan sonra bakım gerekir mi?",
+        question: "Saç derisine zarar verir mi?",
         answer:
-          "Evet. Renkli saçlar özel bakım ister. Size uygun şampuan, maske ve bakım ürünleri öneriyoruz.",
+          "Profesyonel uygulamada saç derisi korunur. Çok sıkı örülmemesi ve düzenli bakım önemlidir.",
       },
       {
-        question: "Balayage ne kadar sürer?",
+        question: "Hangi mevsimde daha uygundur?",
         answer:
-          "Saç uzunluğuna ve yoğunluğuna göre 2-4 saat arasında değişir. Kahve ve atıştırmalık ikramlarımız eşliğinde rahat bir deneyim sunuyoruz.",
+          "Özellikle yaz aylarında serinletici etkisiyle tercih edilir. Tüm mevsimlerde uygulanabilir.",
       },
     ],
-    metaTitle: "Renklendirme | Ombre, Balayage | Ladda Studio",
+    metaTitle: "Mısır Örgüsü Sanatı | Ladda Studio Beşiktaş",
     metaDescription:
-      "Ombre, sombre, balayage ve dip boya. İstanbul'da premium saç renklendirme hizmeti.",
+      "Beşiktaş'ta mısır örgüsü. Klasik Afrika stili. Uzun ömürlü ve pratik.",
   },
   {
-    slug: "hair-care",
-    shortTitle: "Hair Care",
-    title: "Saç Bakım & Tedavi",
-    description: "Keratin, botoks ve saç kurtarma tedavileri.",
-    icon: "Sparkles",
-    priceRange: "₺1.200 - ₺4.000",
+    slug: "burgu-orgu",
+    shortTitle: "Burgu Örgü",
+    title: "Burgu Örgü – Zarif ve Modern Stil",
+    description: "Saç tellerinin çift bükülmesiyle oluşturulan zarif model.",
+    icon: "CircleDot",
+    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&h=600&fit=crop",
+    priceRange: "₺1.000 - ₺3.000",
     intro: [
-      "Sağlıklı saç, güzel saçtır. Keratin bakımı, saç botoksu, protein tedavileri ve saç kurtarma protokolleri ile saçınızı güçlendiriyor, parlaklık ve yumuşaklık kazandırıyoruz.",
-      "Her saç tipi farklı ihtiyaç duyar. Uzman ekibimiz saç analizi yaparak size özel bir bakım planı oluşturur. Ürünlerimiz sert kimyasallar içermez; doğal ve etkili formüller tercih ediyoruz.",
+      "Burgu örgü, saç tellerinin çift olarak bükülüp burgu hâline getirilmesiyle oluşturulan zarif bir modeldir. Az işlem gereksinimi ve şık görünümüyle birçok kişi tarafından tercih edilir.",
+      "Hem günlük hem özel günler için uygun bu stil, saçınıza yumuşak ve doğal bir görünüm kazandırır. Farklı kalınlık ve uzunluk seçenekleri sunuyoruz.",
     ],
     details: [
-      "Keratin Bakımı",
-      "Saç Botoksu",
-      "Protein Tedavisi",
-      "Saç Kurtarma",
-      "Nem Maskesi",
-      "Saç Derisi Masajı",
+      "İnce Burgu",
+      "Kalın Burgu",
+      "İki Ton Burgu",
+      "Tam Baş Burgu",
+      "Yarım Burgu",
     ],
     faqs: [
       {
-        question: "Keratin bakımı ne kadar sürer?",
+        question: "Burgu örgü ile diğer örgüler arasındaki fark nedir?",
         answer:
-          "İşlem 2-3 saat sürer. Sonuç 2-4 ay boyunca kalıcıdır. Düzleştirici kullanımı azalır, saç daha yönetilebilir olur.",
+          "Burgu örgüde saç üç yerine iki parçada bükülür. Daha yumuşak ve doğal bir görünüm sağlar.",
       },
       {
-        question: "Saç botoksu ile keratin farkı nedir?",
+        question: "Ne kadar süre kalır?",
         answer:
-          "Keratin daha çok düzleştirme ve hacim verme odaklıdır. Botoks ise nemlendirme, onarım ve parlaklık sağlar. İkisi birlikte de uygulanabilir.",
+          "2-4 hafta boyunca şeklini korur. Nemlendirme ile ömrü uzatılabilir.",
       },
       {
-        question: "Hangi sıklıkta bakım yaptırmalıyım?",
+        question: "Renkli burgu yapılabilir mi?",
         answer:
-          "Saç tipinize göre 4-8 haftada bir maske veya tedavi öneriyoruz. Danışmanlıkta kişisel program oluşturulur.",
+          "Evet. Tek renk veya karışık renklerle kişiye özel tasarımlar yapıyoruz.",
       },
     ],
-    metaTitle: "Saç Bakım & Tedavi | Keratin, Botoks | Ladda Studio",
+    metaTitle: "Burgu Örgü | Ladda Studio Beşiktaş",
     metaDescription:
-      "Keratin bakımı, saç botoksu ve protein tedavileri. Saçınıza profesyonel bakım.",
+      "Beşiktaş'ta burgu örgü. Zarif ve modern stil. Profesyonel uygulama.",
   },
   {
-    slug: "bridal-special",
-    shortTitle: "Bridal & Special",
-    title: "Gelin & Özel Günler",
-    description: "Gelin başı, nişan saçı ve özel günler için tasarım.",
-    icon: "Heart",
-    priceRange: "₺2.500 - ₺8.000",
+    slug: "orgu-kaynak",
+    shortTitle: "Örgü Kaynak",
+    title: "Örgü Kaynak Hizmeti – Uzunluk ve Hacim",
+    description: "Saçınıza örgü tekniğiyle uzunluk ve hacim kazandırma.",
+    icon: "Layers",
+    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&h=600&fit=crop",
+    priceRange: "₺2.000 - ₺5.000",
     intro: [
-      "Hayatınızın en özel gününde saçınız mükemmel görünmeli. Gelin başı, nişan saçı, düğün öncesi bakım ve özel gün tasarımları için Ladda Studio yanınızda.",
-      "Deneme seansları ile tam istediğiniz görünümü yakalıyoruz. Elmas, inciler veya çiçeklerle süslenmiş romantik topuzlardan modern dalgalı saçlara kadar hayalinizdeki stili yaratıyoruz.",
+      "Örgü kaynak hizmeti ile saçınıza istediğiniz uzunluk ve hacmi kazandırıyoruz. Doğal veya sentetik saç eklemesiyle mevcut saçınız örülerek uzatılır ve yoğunlaştırılır.",
+      "Farklı örgü stilleriyle birleştirilebilen bu teknik, kalıcı ve doğal görünümlü sonuçlar sunar. Uzman ekibimiz size en uygun malzeme ve tekniği önerir.",
     ],
     details: [
-      "Gelin Başı",
-      "Nişan Saçı",
-      "Deneme Seansı",
-      "Düğün Öncesi Bakım",
-      "Özel Gün Tasarımı",
-      "Aksesuar Entegrasyonu",
+      "Doğal Saç Kaynak",
+      "Sentetik Saç Kaynak",
+      "İnce Örgü Kaynak",
+      "Kalın Örgü Kaynak",
+      "Karışık Renk Kaynak",
     ],
     faqs: [
       {
-        question: "Gelin paketi ne içerir?",
+        question: "Örgü kaynak ne kadar sürede yapılır?",
         answer:
-          "Deneme seansı, düğün günü saç ve makyaj, aksesuar kullanımı dahildir. Paketler düğün büyüklüğüne göre özelleştirilir.",
+          "Uzunluk ve yoğunluğa göre 5-10 saat arasında değişir. Molalarla birlikte rahat bir deneyim sunuyoruz.",
       },
       {
-        question: "Deneme seansı ne zaman yapılmalı?",
+        question: "Kaynak saçlar ne kadar dayanır?",
         answer:
-          "Düğünden 1-2 ay önce öneriyoruz. Böylece gerekirse ek deneme veya değişiklik yapılabilir.",
+          "Bakıma bağlı olarak 2-3 ay kullanılabilir. Düzenli bakım önerileri veriyoruz.",
       },
       {
-        question: "Salona mı yoksa mekana mı geliyorsunuz?",
+        question: "Kendi saçıma uyum sağlar mı?",
         answer:
-          "Her iki seçenek de mevcuttur. Mekan hizmeti için ek ücret ve ulaşım süresi değerlendirilir.",
+          "Renk ve doku eşleştirmesi yaparak doğal bir geçiş sağlıyoruz.",
       },
     ],
-    metaTitle: "Gelin Başı & Özel Günler | Ladda Studio",
+    metaTitle: "Örgü Kaynak Hizmeti | Ladda Studio Beşiktaş",
     metaDescription:
-      "Gelin başı, nişan saçı ve düğün öncesi bakım. Hayalinizdeki gün için saç tasarımı.",
+      "Beşiktaş'ta örgü kaynak. Uzunluk ve hacim. Doğal ve sentetik seçenekler.",
+  },
+  {
+    slug: "igne-kaynak",
+    shortTitle: "İğne Kaynak",
+    title: "İğne Kaynak Saç Uzatma",
+    description: "İğne tekniğiyle saç uzatma ve hacim kazandırma.",
+    icon: "Plus",
+    image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&h=600&fit=crop",
+    priceRange: "₺2.500 - ₺6.000",
+    intro: [
+      "İğne kaynak tekniği ile saçınıza eklenen doğal veya sentetik saçlar, küçük iğneler yardımıyla mevcut saçınıza tutturulur. Örgüye alternatif olarak daha hızlı ve farklı bir görünüm sunar.",
+      "Daha az yoğunluk isteyenler için ideal bir seçenektir. Saç derinize minimal temas ile uzunluk ve hacim kazandırıyoruz.",
+    ],
+    details: [
+      "Doğal Saç İğne Kaynak",
+      "Sentetik İğne Kaynak",
+      "Yarım Baş Uzatma",
+      "Tam Baş Uzatma",
+      "Renk Eşleştirme",
+    ],
+    faqs: [
+      {
+        question: "İğne kaynak örgü kaynaktan farklı mı?",
+        answer:
+          "Evet. İğne kaynakta saç örülmez, küçük tutamlar halinde iğneyle tutturulur. Daha serbest bir görünüm sağlar.",
+      },
+      {
+        question: "Ne kadar sürede uygulanır?",
+        answer:
+          "Örgü kaynaktan daha kısa sürer, yaklaşık 3-6 saat arasındadır.",
+      },
+      {
+        question: "Bakımı nasıldır?",
+        answer:
+          "Özel tarak ve nemlendirici ürünlerle bakım yapmanızı öneriyoruz. Detaylı bilgi randevuda verilir.",
+      },
+    ],
+    metaTitle: "İğne Kaynak Saç Uzatma | Ladda Studio Beşiktaş",
+    metaDescription:
+      "Beşiktaş'ta iğne kaynak saç uzatma. Hızlı ve doğal görünüm.",
   },
 ];
 
-// ============ EKİP (STİLİSTLER) ============
+// ============ EKİP ============
 
 export interface TeamMember {
   slug: string;
@@ -213,38 +294,38 @@ export const teamMembers: TeamMember[] = [
   {
     slug: "stylist-1",
     name: "Elif Yılmaz",
-    role: "Top Stylist",
-    specialty: "Kesim & Şekillendirme",
+    role: "Örgü Uzmanı",
+    specialty: "Afrika Örgüsü ve Mısır Örgüsü",
     image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&h=800&fit=crop",
-    bio: "15 yıllık deneyim. Milano ve Paris'te eğitim aldı.",
+    bio: "15 yıllık deneyim. Afrika saç stilleri konusunda uzman.",
   },
   {
     slug: "stylist-2",
     name: "Can Öztürk",
-    role: "Color Expert",
-    specialty: "Renklendirme & Balayage",
+    role: "Afro Stilisti",
+    specialty: "Afro Dalgası ve Doğal Saç",
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=800&fit=crop",
-    bio: "Uluslararası renk uzmanı. Wella Professionals sertifikalı.",
+    bio: "Doğal saç stilleri ve afro dalgası uzmanı.",
   },
   {
     slug: "stylist-3",
     name: "Selin Demir",
-    role: "Senior Stylist",
-    specialty: "Bakım & Tedavi",
+    role: "Kıdemli Stilist",
+    specialty: "Burgu Örgü ve Kaynak",
     image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=600&h=800&fit=crop",
-    bio: "Keratin ve botoks uzmanı. Saç sağlığı odaklı yaklaşım.",
+    bio: "Burgu örgü ve saç uzatma teknikleri uzmanı.",
   },
   {
     slug: "stylist-4",
     name: "Burak Kaya",
-    role: "Bridal Specialist",
-    specialty: "Gelin & Özel Günler",
+    role: "Kaynak Uzmanı",
+    specialty: "Örgü Kaynak ve İğne Kaynak",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop",
-    bio: "Özel günlerde hayalleri gerçeğe dönüştürüyor.",
+    bio: "Saç uzatma ve kaynak tekniklerinde uzman.",
   },
 ];
 
-// ============ GALERİ (LOOKBOOK) ============
+// ============ GALERİ ============
 
 export interface GalleryItem {
   slug: string;
@@ -257,57 +338,57 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     slug: "look-1",
-    title: "Balayage Waves",
-    category: "Renklendirme",
+    title: "Afrika Örgüsü",
+    category: "Afrika Örgüsü",
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&fit=crop",
     aspect: "portrait",
   },
   {
     slug: "look-2",
-    title: "Classic Bob",
-    category: "Kesim",
-    image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=400&fit=crop",
+    title: "Mısır Örgüsü",
+    category: "Mısır Örgüsü",
+    image: "https://images.unsplash.com/photo-1616394584738-fc7628d92f85?w=600&h=400&fit=crop",
     aspect: "landscape",
   },
   {
     slug: "look-3",
-    title: "Bridal Updo",
-    category: "Gelin",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=800&fit=crop",
+    title: "Afro Dalgası",
+    category: "Afro Dalgası",
+    image: "https://images.unsplash.com/photo-1532635241-17e820acc59f?w=600&h=800&fit=crop",
     aspect: "portrait",
   },
   {
     slug: "look-4",
-    title: "Ombre Curls",
-    category: "Renklendirme",
-    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop",
+    title: "Burgu Örgü",
+    category: "Burgu Örgü",
+    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&h=600&fit=crop",
     aspect: "square",
   },
   {
     slug: "look-5",
-    title: "Pixie Cut",
-    category: "Kesim",
-    image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&h=800&fit=crop",
+    title: "Örgü Kaynak",
+    category: "Örgü Kaynak",
+    image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=800&fit=crop",
     aspect: "portrait",
   },
   {
     slug: "look-6",
-    title: "Soft Waves",
-    category: "Şekillendirme",
+    title: "Uzun Örgü",
+    category: "Afrika Örgüsü",
     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop",
     aspect: "landscape",
   },
   {
     slug: "look-7",
-    title: "Sombre Long",
-    category: "Renklendirme",
+    title: "İğne Kaynak",
+    category: "İğne Kaynak",
     image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&h=800&fit=crop",
     aspect: "portrait",
   },
   {
     slug: "look-8",
-    title: "Elegant Updo",
-    category: "Özel Gün",
+    title: "Desenli Örgü",
+    category: "Mısır Örgüsü",
     image: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600&h=600&fit=crop",
     aspect: "square",
   },
@@ -317,10 +398,10 @@ export const galleryItems: GalleryItem[] = [
 
 export const homeContent = {
   hero: {
-    title: "Your Hair,",
-    titleAccent: "Your Signature.",
+    title: "Beşiktaş'ta",
+    titleAccent: "Afrika Esintisi",
     subtitle:
-      "Modern kesimler, kişiye özel renklendirme ve profesyonel saç bakımı. İstanbul'un en prestijli kuaför stüdyosunda kendinizi keşfedin.",
+      "Afrika örgüsü, mısır örgüsü, burgu örgü ve saç uzatma. Profesyonel ekibimiz ve modern tekniklerimizle size en uygun saç modelini bulmanız için buradayız.",
     cta: "Randevu Al",
     ctaLink: "/contact",
   },
@@ -329,11 +410,11 @@ export const homeContent = {
     subtitle: "Saçınıza özel, uzman ellerde.",
   },
   teamPreview: {
-    title: "Meet the Artists",
+    title: "Ekibimiz",
     subtitle: "Tutkulu ve deneyimli stilistlerimizle tanışın.",
   },
   galleryPreview: {
-    title: "Lookbook",
+    title: "Çalışmalarımız",
     subtitle: "En son çalışmalarımızdan ilham alın.",
   },
 };

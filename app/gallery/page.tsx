@@ -4,9 +4,9 @@ import Gallery from "@/components/Gallery";
 import { homeContent, galleryItems } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Lookbook",
+  title: "Çalışmalarımız",
   description:
-    "Ladda Studio çalışmaları. Kesim, renklendirme ve özel gün saç modellerinden ilham alın.",
+    "Ladda Studio çalışmaları. Afrika örgüsü, mısır örgüsü, burgu örgü ve saç uzatma modellerinden ilham alın.",
 };
 
 export default function GalleryPage() {

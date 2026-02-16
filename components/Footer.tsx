@@ -17,7 +17,7 @@ export default function Footer() {
               Ladda
             </Link>
             <p className="mt-4 text-sm text-muted">
-              Your Hair, Your Signature.
+              Beşiktaş'ta Afrika Esintisi
             </p>
             <div className="mt-6 flex gap-4">
               <a
@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/gallery" className="text-sm text-muted transition-colors hover:text-accent">
-                  Lookbook
+                  Çalışmalarımız
                 </Link>
               </li>
               <li>

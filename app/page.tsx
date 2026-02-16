@@ -36,7 +36,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <ServiceCard
                 key={service.slug}
@@ -131,7 +131,7 @@ export default function HomePage() {
               href="/gallery"
               className="inline-flex items-center text-accent hover:text-accent-muted"
             >
-              Tüm Lookbook
+              Tüm Çalışmalarımız
             </Link>
           </motion.div>
         </div>

@@ -2,15 +2,17 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Scissors, Palette, Sparkles, Heart, ArrowRight } from "lucide-react";
+import { Scissors, Sparkles, Grid3X3, CircleDot, Layers, Plus, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Service } from "@/lib/data";
 
 const iconMap = {
   Scissors,
-  Palette,
   Sparkles,
-  Heart,
+  Grid3X3,
+  CircleDot,
+  Layers,
+  Plus,
 };
 
 interface ServiceCardProps {

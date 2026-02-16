@@ -6,7 +6,7 @@ import { services } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Hizmetler",
   description:
-    "Kesim, renklendirme, saç bakımı ve gelin başı. Ladda Studio'da saçınıza özel hizmetler.",
+    "Afrika örgüsü, mısır örgüsü, burgu örgü, örgü kaynak ve iğne kaynak. Ladda Studio Beşiktaş'ta saçınıza özel hizmetler.",
 };
 
 export default function ServicesPage() {
@@ -14,13 +14,13 @@ export default function ServicesPage() {
     <>
       <Hero
         title="Hizmetlerimiz"
-        subtitle="Saçınıza özel, uzman ellerde. Kesimden renklendirmeye, bakımdan özel günlere."
+        subtitle="Afrika örgüsünden saç uzatmaya. Saçınıza özel, uzman ellerde."
         size="small"
       />
 
       <section className="border-t border-border px-6 py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <ServiceCard
                 key={service.slug}

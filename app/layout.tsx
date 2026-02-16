@@ -18,18 +18,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ladda Studio | Your Hair, Your Signature",
+    default: "Ladda Studio | Beşiktaş'ta Afrika Esintisi",
     template: "%s | Ladda Studio",
   },
   description:
-    "İstanbul'un en prestijli kuaför stüdyosu. Modern kesimler, kişiye özel renklendirme ve profesyonel saç bakımı. Randevu alın.",
+    "Beşiktaş'ta Afrika örgüsü, mısır örgüsü, burgu örgü ve saç uzatma. Profesyonel ekibimizle randevu alın.",
   keywords: [
-    "kuaför",
-    "saç kesimi",
-    "balayage",
-    "keratin bakım",
-    "gelin başı",
-    "Nişantaşı kuaför",
+    "afrika örgüsü",
+    "mısır örgüsü",
+    "burgu örgü",
+    "afro dalgası",
+    "örgü kaynak",
+    "iğne kaynak",
+    "Beşiktaş kuaför",
     "Ladda Studio",
   ],
   authors: [{ name: "Ladda Studio" }],

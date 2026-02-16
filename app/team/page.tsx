@@ -6,14 +6,14 @@ import { homeContent } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Ekip",
   description:
-    "Ladda Studio stilistleri. Top Stylist, Color Expert ve Bridal Specialist ekibimizle tanışın.",
+    "Ladda Studio stilistleri. Örgü uzmanı, afro stilisti ve kaynak uzmanı ekibimizle tanışın.",
 };
 
 export default function TeamPage() {
   return (
     <>
       <Hero
-        title="Meet the Artists"
+        title={homeContent.teamPreview.title}
         subtitle={homeContent.teamPreview.subtitle}
         size="small"
       />

@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050505;
+  --surface: #0a0a0a;
+  --accent: #CCFF00;
+  --accent-muted: #a3cc00;
+  --muted: #737373;
+  --border: #262626;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: #fafafa;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Kinetic scroll reveal - kelime kelime stagger */
+.word-reveal {
+  overflow: hidden;
+}
+
+.word-reveal span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* Neon glow efekti */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(204, 255, 0, 0.3),
+               0 0 20px rgba(204, 255, 0, 0.2),
+               0 0 40px rgba(204, 255, 0, 0.1);
+}
+
+/* Bento grid için özel stiller */
+.bento-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(204, 255, 0, 0.1);
+}
